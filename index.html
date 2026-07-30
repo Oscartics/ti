@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#071527" />
+  <title>Temporizador corporativo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="timer-app" aria-label="Temporizador corporativo">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <p class="eyebrow">SALA DE REUNIONES</p>
+          <h1>TEMPORIZADOR</h1>
+        </div>
+      </div>
+      <button id="fullscreenButton" class="icon-button" type="button" aria-label="Activar pantalla completa" title="Pantalla completa">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V5h4M15 5h5v4M20 15v4h-5M8 20H4v-4" /></svg>
+      </button>
+    </header>
+
+    <section class="timer-stage">
+      <p id="statusText" class="status-text">LISTO PARA COMENZAR</p>
+      <div id="timerRing" class="timer-ring" role="timer" aria-live="polite" aria-label="Tiempo restante">
+        <svg class="ring-svg" viewBox="0 0 480 480" aria-hidden="true">
+          <circle class="ring-track" cx="240" cy="240" r="218" />
+          <circle id="ringProgress" class="ring-progress" cx="240" cy="240" r="218" />
+        </svg>
+        <div class="timer-content">
+          <span id="timeNumber" class="time-number">30</span>
+          <span class="seconds-label">SEGUNDOS</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="control-panel">
+      <div class="presets" role="group" aria-label="Seleccionar duración">
+        <span class="panel-label">DURACIÓN</span>
+        <div class="preset-buttons">
+          <button type="button" data-duration="10">10 s</button>
+          <button type="button" data-duration="15">15 s</button>
+          <button type="button" data-duration="20">20 s</button>
+          <button type="button" data-duration="30" class="selected">30 s</button>
+          <button type="button" data-duration="45">45 s</button>
+          <button type="button" data-duration="60">60 s</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="resetButton" class="secondary-button" type="button">REINICIAR</button>
+        <button id="startButton" class="primary-button" type="button"><span class="play-icon">▶</span> INICIAR</button>
+      </div>
+    </footer>
+    <div class="progress-wrap" aria-hidden="true"><div id="bottomProgress" class="bottom-progress"></div></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
